@@ -1,6 +1,6 @@
 import React from 'react';
 import AmortizationChart from './AmortizationChart';
-import * as mortgage from './mortgage';
+import * as mortgage from './mortgage.js';
 
 
 
@@ -27,9 +27,7 @@ class MortgageCalculator extends React.Component{
     }
 
     render() {
-        let payment = calculatePayment(this.state.principal, this.state.years, this.state.rate);
-        let monthlyPayment = payment.monthlyPayment;
-        let amortization = payment.amortization;
+        let {monthlyPayment, amortization} = mortgage.calculatePayment(this.state.principal, this.state.years, this.state.rate);
         return (
             <div className="content">
                 <div className="form">

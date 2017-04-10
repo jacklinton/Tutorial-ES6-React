@@ -13,7 +13,7 @@ export let calculatePayment = (principal, years, rate) => {
             principalY = principalY + principalM;
             balance = balance - principalM;
         }
-        amortization.push({principalY: principalY, interestY: interestY, balance: balance});
+        amortization.push({principalY, interestY, balance});
     }
-    return {monthlyPayment: monthlyPayment, amortization:amortization};
+    return {monthlyPayment, amortization};
 };
